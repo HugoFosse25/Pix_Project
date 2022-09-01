@@ -19,7 +19,7 @@ public class PlayerShoot : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
-        bulletSpawnTransform = GameObject.FindGameObjectWithTag("Bullet Spawn").transform;
+        bulletSpawnTransform = GameObject.FindGameObjectWithTag("Bullet Spawn").transform;  //Spawn point of the bullet
     }
 
     private void Update()
@@ -46,10 +46,10 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
-            Vector3 playerPosition = bulletSpawnTransform.position;
-            Instantiate(bulletPrefab, playerPosition, Quaternion.identity);
-            CurrentMagazineCapacity -= 1;
-            isPlayerShooting = false;
+        CurrentMagazineCapacity -= 1;
+        isPlayerShooting = false;
+        Vector3 bulletSpawnPoint = bulletSpawnTransform.position;
+        Instantiate(bulletPrefab, bulletSpawnPoint, Quaternion.identity);   
     }
 
     private IEnumerator Reload()
