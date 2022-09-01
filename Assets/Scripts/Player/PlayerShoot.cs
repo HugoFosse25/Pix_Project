@@ -24,10 +24,11 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isPlayerReload)
         {
             isPlayerShooting = true;
         }
+
     }
 
     private void FixedUpdate()
