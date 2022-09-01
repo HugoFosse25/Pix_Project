@@ -49,7 +49,7 @@ public class PlayerShoot : MonoBehaviour
         CurrentMagazineCapacity -= 1;
         isPlayerShooting = false;
         Vector3 bulletSpawnPoint = bulletSpawnTransform.position;
-        Instantiate(bulletPrefab, bulletSpawnPoint, Quaternion.identity);   
+        Instantiate(bulletPrefab, bulletSpawnPoint, Quaternion.identity);
     }
 
     private IEnumerator Reload()
