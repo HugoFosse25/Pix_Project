@@ -1,6 +1,4 @@
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 public class HealthSystem : MonoBehaviour
 {
     public static HealthSystem instance;
