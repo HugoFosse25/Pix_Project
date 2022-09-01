@@ -11,9 +11,14 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isGrounded;
     private bool isJumpButtonDown;
+    private bool canDash = true;
+    private bool isDashing;
 
     private float horizontalMovement;
-    float characterVelocity;
+    private float characterVelocity;
+    private float dashingPower = 24f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 1f;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
