@@ -29,6 +29,11 @@ public class PlayerShoot : MonoBehaviour
             isPlayerShooting = true;
         }
 
+        if (Input.GetKeyDown(KeyCode.R) && !isPlayerReload)
+        {
+            StartCoroutine(Reload());
+        }
+
     }
 
     private void FixedUpdate()
@@ -57,6 +62,7 @@ public class PlayerShoot : MonoBehaviour
     private IEnumerator Reload()
     {
         isPlayerReload = true;
+        BulletSystem.instance.RefreshUI(0);
         yield return new WaitForSeconds(reloadTime);
         CurrentMagazineCapacity = maxMagazineCapacity;
         BulletSystem.instance.RefreshUI(CurrentMagazineCapacity);
