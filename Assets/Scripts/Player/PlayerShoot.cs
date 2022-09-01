@@ -49,6 +49,7 @@ public class PlayerShoot : MonoBehaviour
     {
         CurrentMagazineCapacity -= 1;
         isPlayerShooting = false;
+        BulletSystem.instance.RefreshUI(CurrentMagazineCapacity);
         Vector3 bulletSpawnPoint = bulletSpawnTransform.position;
         Instantiate(bulletPrefab, bulletSpawnPoint, Quaternion.identity);
     }
@@ -58,6 +59,7 @@ public class PlayerShoot : MonoBehaviour
         isPlayerReload = true;
         yield return new WaitForSeconds(reloadTime);
         CurrentMagazineCapacity = maxMagazineCapacity;
+        BulletSystem.instance.RefreshUI(CurrentMagazineCapacity);
         isPlayerReload = false;
     }
 }
