@@ -36,8 +36,6 @@ public class Bullet : MonoBehaviour
         {
             StopCoroutine(bulletAutoDestroy()); //If collision stop autodestroy
 
-            //if collision is a ennemie = takedamage
-
             Destroy(gameObject);
         }
     }

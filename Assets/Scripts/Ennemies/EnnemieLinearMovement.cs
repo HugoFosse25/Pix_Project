@@ -12,7 +12,7 @@ public class EnnemieLinearMovement : MonoBehaviour
             Transform go = transform.GetChild(i);
             if (go.gameObject.CompareTag("Waypoint"))
             {
-                waypoints[i] = go.position;
+                //waypoints[i] = go.position;
             }
         }
 
