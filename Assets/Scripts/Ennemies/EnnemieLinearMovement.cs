@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnnemieLinearMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Vector3[] waypoints;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            Transform go = transform.GetChild(i);
+            if (go.gameObject.CompareTag("Waypoint"))
+            {
+                waypoints[i] = go.position;
+            }
+        }
+
+        transform.position = waypoints[0]; //Initialise the ennemie position to the first waypoint
     }
 }
