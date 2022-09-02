@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnnemieLinearMovement : MonoBehaviour
 {
+
     private Vector3[] waypoints;
 
     private void Start()
@@ -15,6 +16,6 @@ public class EnnemieLinearMovement : MonoBehaviour
             }
         }
 
-        transform.position = waypoints[0]; //Initialise the ennemie position to the first waypoint
     }
+
 }
