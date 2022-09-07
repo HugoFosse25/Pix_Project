@@ -62,9 +62,9 @@
     <Compile Include="Assets\Scripts\Bullet\Bullet.cs" />
     <Compile Include="Assets\Scripts\Manager\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
-    <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Ennemies\EnnemieLinearMovement.cs" />
     <Compile Include="Assets\Scripts\Ennemies\EnnemieHealth.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imports\heart pixel art\Credits.txt" />

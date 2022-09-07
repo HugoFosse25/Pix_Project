@@ -7,7 +7,7 @@ public class EnnemieHealth : MonoBehaviour
 
     private int nbOfCurrentLife;
 
-    private float hitTime = 0.2f;
+    public float hitTime = 0.2f;
 
     private Color spColor;
 
@@ -27,14 +27,19 @@ public class EnnemieHealth : MonoBehaviour
     public IEnumerator TakeDamage(int nbOfDamage)
     {
         nbOfCurrentLife -= nbOfDamage;
-        Debug.Log(nbOfCurrentLife);
-        spColor.a = 0f;
-        yield return new WaitForSeconds(hitTime);
-        spColor.a = 1f;
+        StartCoroutine(HittingTime());
         if (nbOfCurrentLife <= 0)
         {
             Die();
         }
+        yield return null;
+    }
+
+    private IEnumerator HittingTime()
+    {
+        spColor.a = 0f;
+        yield return new WaitForSeconds(hitTime);
+        spColor.a = 1f;
     }
 
     public void Die()
